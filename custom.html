@@ -5,6 +5,7 @@
 <title>1</title>
 <style>
 	#container{
+		position:relative;
 		width:1024px;
 		height:768px;
 		margin:0 auto;
@@ -25,12 +26,23 @@
         height:50px;margin:    0px;
         text-align:center;
         line-height:30px;
-    }	
+    }
+	.left{
+		position:absolute;
+		top:120px;
+		left:320px;
+		width:350px;
+		height:500px;
+		font-size: 20px;
+		text-indent: 2em;
+	}
 	.left div{
     display: none;
 	}
 	.left .show{
     display: block;
+	border: 1px solid;
+	border-radius: 15px;
 	}
 	ul li{
     width: 100px;
@@ -42,9 +54,17 @@
     font-size: 24px;
     color: #470a47;
     background: #acdeff;
-    margin-right: 100px;
+    margin-right: 10px;
     cursor: pointer;
+	list-style-type: none
 }
+	.right{
+		position:absolute;
+		top:60px;
+		left:700px;
+		width:350px;
+		height:500px;
+	}
 </style>
 <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
 </head>
@@ -66,18 +86,26 @@
 		</div>
 	</div>
 	<div class="left">
-	<div class="show" id="all">
-	温岭市是浙江省台州市所辖县级市，中国大陆新千年、新世纪第一缕曙光首照地，地处浙江东南沿海，长三角地区的南翼，三面临海 ，东濒东海，南连玉环，西邻乐清及乐清湾，北接台州市区，地理坐标东经121°09′50″~121°44′0″，北纬28°12′45″~28°32′02″，是一座滨海城市。
+	<div class="show"><p>
+	温岭市是浙江省台州市所辖县级市，中国大陆新千年、新世纪第一缕曙光首照地，地处浙江东南沿海，长三角地区的南翼，三面临海 ，东濒东海，南连玉环，西邻乐清及乐清湾，北接台州市区，地理坐标东经121°09′50″~121°44′0″，北纬28°12′45″~28°32′02″，是一座滨海城市。</p>
 	</div>
-	<div id="all">22222</div>
+	<div >22222</div>
+	</div>
+	<div class="right">
+		<div id="home">
+			<a href="">主页</a>
+		</div>
+		<div id="test">
+			<a href="">小测验</a>
+		</div>
 	</div>
 </div>
 <script>
 	$('ul li').click(function(event) {
 	$(this).addClass('tab');
 	$(this).siblings().removeClass('tab'); 
-	$('.left #all').eq($(this).index()).addClass('show');
-	$('.left #all').eq($(this).index()).siblings().removeClass('show');
+	$('.left div').eq($(this).index()).addClass('show');
+	$('.left div').eq($(this).index()).siblings().removeClass('show');
 	})
 </script>
 </body>
