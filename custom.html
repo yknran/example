@@ -6,13 +6,14 @@
 <style>
 	#container{
 		position:relative;
-		width:1024px;
-		height:768px;
+		width:1007px;
+		height:600px;
 		margin:0 auto;
+		border:1px dashed aqua;
 	}
 	#right{
-		width:1024px;
-		height:70px;
+		width:1007px;
+		height:170px;
 		margin:0 auto;
 	}
 	#link{
@@ -31,7 +32,7 @@
 		position:absolute;
 		top:120px;
 		left:320px;
-		width:350px;
+		width:550px;
 		height:500px;
 		font-size: 20px;
 		text-indent: 2em;
@@ -40,24 +41,35 @@
     display: none;
 	}
 	.left .show{
-    display: block;
-	border: 1px solid;
-	border-radius: 15px;
+    	display: block;
+		width:550px;
+		height:450px;
+		border: 1px solid;
+		border-radius: 15px;
 	}
 	ul li{
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 25px;
-    float: left;
-    font-size: 24px;
-    color: #470a47;
-    background: #acdeff;
-    margin-right: 10px;
-    cursor: pointer;
-	list-style-type: none
-}
+
+    	width: 200px;
+    	height: 150px;
+   		float: left;
+    	font-size: 24px;
+   		margin-right: 50px;
+   		cursor: pointer;
+		list-style-type: none
+	}
+	.tab{
+		position: absolute;
+		
+		display: block;
+		
+	}
+
+	#li1{
+		display: none;
+		position: absolute;
+		top:100px;
+		left: 120px
+	}
 	.right{
 		position:absolute;
 		top:60px;
@@ -77,10 +89,10 @@
 		<ul>
 
         <li class="tab">
-            地区概述
+            <img src="img/图片2.png" width="150px" >
         </li>
-        <li>
-            风俗介绍
+        <li id="li1">
+            <img src="img/图片3.png" width="150px">
         </li>  
 		</ul>
 		</div>
@@ -101,9 +113,21 @@
 	</div>
 </div>
 <script>
+	$('.tab').mouseenter(function(event){
+		$('#li1').css('display','block');
+	});
+	$('.tab').mouseleave(function(event){
+		$('#li1').css('display','none');
+	});
+	$('#li1').mouseenter(function(event){
+		$('#li1').css('display','block');
+	});
+	$('#li1').mouseleave(function(event){
+		$('#li1').css('display','none');
+	});
 	$('ul li').click(function(event) {
 	$(this).addClass('tab');
-	$(this).siblings().removeClass('tab'); 
+	$(this).siblings().removeClass('tab');
 	$('.left div').eq($(this).index()).addClass('show');
 	$('.left div').eq($(this).index()).siblings().removeClass('show');
 	})
