@@ -64,7 +64,7 @@
 		
 	}
 
-	#li1{
+	.li1{
 		display: none;
 		position: absolute;
 		top:100px;
@@ -91,7 +91,7 @@
         <li class="tab">
             <img src="img/图片2.png" width="150px" >
         </li>
-        <li id="li1">
+        <li class="li1">
             <img src="img/图片3.png" width="150px">
         </li>  
 		</ul>
@@ -114,20 +114,22 @@
 </div>
 <script>
 	$('.tab').mouseenter(function(event){
-		$('#li1').css('display','block');
+		$('.li1').css('display','block');
 	});
 	$('.tab').mouseleave(function(event){
-		$('#li1').css('display','none');
+		$('.li1').css('display','none');
 	});
-	$('#li1').mouseenter(function(event){
-		$('#li1').css('display','block');
+	$('.li1').mouseenter(function(event){
+		$('.li1').css('display','block');
 	});
-	$('#li1').mouseleave(function(event){
-		$('#li1').css('display','none');
+	$('.li1').mouseleave(function(event){
+		$('.li1').css('display','none');
 	});
 	$('ul li').click(function(event) {
+	$(this).removeClass('li1');
 	$(this).addClass('tab');
 	$(this).siblings().removeClass('tab');
+	$(this).siblings().addClass('li1');
 	$('.left div').eq($(this).index()).addClass('show');
 	$('.left div').eq($(this).index()).siblings().removeClass('show');
 	})
