@@ -2,9 +2,51 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>custom</title>
-<link rel="stylesheet" href="#">
+<title>food</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+
 <style>
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+	  flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+	  transition: 300ms;
+	  transform: scale(0.8);
+	  opacity: .4;
+    }
+	.swiper-slide p {
+    margin-top: -70px;
+    color: white;
+	}
+	.swiper-slide-active,.swiper-slide-duplicate-active{
+      transform: scale(1);
+	}
+	.swiper-slide-active,
+	.swiper-slide-duplicate-active{
+		transform:scale(1.2);
+		z-index: 999;
+		opacity: 1;
+	}
+	.size{
+		width:550px;
+		height:300px;
+	}
 	*{
 		margin: 0;
 		padding: 0;
@@ -14,7 +56,7 @@
 		height:600px;
 		width: 1007px;
 		margin:0 auto;
-		background:url(img/bg2.png) no-repeat;
+		background:url(img/bg1.png) no-repeat;
 		border:1px dashed aqua;
 	}
 	a{
@@ -83,15 +125,12 @@
 	.tab .tab_content .atab_content{
 		display: flex;
 	}
-	.tab .tab_content li p{
-		padding: 2em;
-	}
-	.tab .tab_content li img {
+	.tab .tab_content li .showImg {
     	width: 200px;
     	height: 150px;
     	margin-top: -100px;
 	}
-	.tab .tab_content li div {
+	.tab .tab_content li .show {
    		width: 100%;
     	height: 128px;
     	position: relative;
@@ -99,8 +138,12 @@
     	margin-top: -200px;
 	}
 	.tab .tab_content li p{
+		padding: 2em;
+	}
+
+	.tab .tab_content li p{
 		text-indent: 2em;
-		margin-top:-10px;
+	
 		line-height: 1.5em;
 		overflow:hidden;
 	}
@@ -183,12 +226,38 @@
 	.home ul li a:hover img{
 		opacity: 1;
 	}
-		#F,#T,#F1,#T1{
+		#main{
+			width: 300px;
+			height: 300px;
+
+		}
+	#begin{
+			width: 300px;
+			height: 300px;
+			float: left;
+			margin: 5px;
+			padding: 0px;
+			list-style-type: none;
+			background-color: blanchedalmond;
+		}
+	#begin li {
+			float: left;
+		}
+		#success {
+			display: none;
+			line-height: 14px;
+			text-align: center;
+			color:white;
+			font-size: 14px;
+			margin-top:-100px;
+			z-index: 999;
+		}
+	#F,#T,#F1,#T1{
 		display: none;
 		font-size: 18px;
 	}
 	#myform,#myform1{
-		margin-top:0;
+		margin-top:-100px;
 		font-size: 20px;
 	}
 	.btn{
@@ -247,72 +316,96 @@
 	</div>
 	<div class="tab">
 		<ul class="tab_list">
-			<li class="atab_list">地区概述</li>
-			<li>视频介绍</li>
-			<li>图文展示</li>
-			<li>小测试</li>
+			<li>地区概述</li>
+			<li>美食展示</li>
+			<li class="atab_list">图文展示</li>
+			<li>小测验</li>
 		</ul>
 		
 		<ul class="tab_content">
-			<li class="atab_content">
+			<li>
 			<iframe width='420' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://surl.amap.com/z9Vija1zdtC'></iframe>
 			<p>
 			
 				温岭市是浙江省台州市所辖县级市，中国大陆新千年、新世纪第一缕曙光首照地，地处浙江东南沿海，长三角地区的南翼，三面临海 ，东濒东海，南连玉环，西邻乐清及乐清湾，北接台州市区，地理坐标东经121°09′50″~121°44′0″，北纬28°12′45″~28°32′02″，是一座滨海城市。
 			</p>
-</li>
-			<li><iframe height=364 width=700 src='https://player.youku.com/embed/XMTcyNjMzNTY4NA==' frameborder=0 'allowfullscreen'></iframe></li>
-			<li>
-
-		<img alt="" src="img/minsu1.png">
-		<div>
-			<h2>大奏鼓</h2>
-			<p>大奏鼓是流传在石塘镇箬山一带渔区的民间舞蹈。大奏鼓舞蹈动作粗犷而滑稽，边奏边舞，舞者全为男性，服饰打扮却是女性，在汉族舞蹈中不多见，具有独特的地方色彩。据福建《惠安县志》和《琅轩陈氏宗谱》载，箬山陈姓为十七世纪中叶由惠安迁入，大奏鼓（当时叫“大典鼓”）亦随之带入，距今有360余年历史。由于长期来石塘为半岛偏僻之地，大奏鼓才得以流传下来。</p>
-		<ul class="pagination">
-    		<li><a href="#">&laquo;</a></li>
-    		<li class="active"><a href="#">1</a></li>
-    		<li class="disabled"><a href="custom1.html">2</a></li>
-    		<li><a href="custom2.html">3</a></li>
-    		<li><a href="custom3.html">4</a></li>
-    		<li><a href="#">&raquo;</a></li>
-		</ul>
-		</div>	
 			</li>
+			<li>  
+			<div class="swiper-container">
+	    	<div class="swiper-wrapper">
+      		<div class="swiper-slide size">
+      		<a href="#"><img alt="" src="img/food.png" width="400px" height="300px"></a>
+      		<p>食饼筒</p>
+     	 	</div>
+     		<div class="swiper-slide">
+      		<a href="#"><img alt="" src="img/food1.png" width="400px" height="300px"></a>
+      		<p>嵌糕</p>     		
+     		</div>
+      		<div class="swiper-slide">
+       		<a href="#"><img alt="" src="img/food2.png" width="400px" height="300px"></a>
+      		<p>豆腐生</p>     			
+      		</div>
+     	 	<div class="swiper-slide">
+        	<a href="#"><img alt="" src="img/4.png" width="400px" height="300px"></a>
+      		<p>绿豆面</p>     	 		
+     	 	</div>
+    		</div>
+    		<div class="swiper-button-next"></div>
+    		<div class="swiper-button-prev"></div>
+  			</div>
+			</li>
+			<li  class="atab_content">
+				<img alt="" src="img/food4.png" class="showImg">
+				<div class="show">
+				<h2>绿豆面</h2>
+				<p>由蕃薯粉（蕃莳粉）压制而成。炒绿豆面，是温岭石塘箬山的一道特色美食；而作为早餐，绿豆面都是用来放汤的。所谓放汤，就是将绿豆面放在水里面煮，再在汤里面放一些香菇、茭白、虾干等提味，面韧汤鲜好味道
+				</p>
+				<ul class="pagination">
+    			<li><a href="#">&laquo;</a></li>
+    			<li class="active"><a href="#">1</a></li>
+    			<li class="disabled"><a href="food1.html" onClick="">2</a></li>
+    			<li><a href="food2.html">3</a></li>
+    			<li><a href="food3.html">4</a></li>
+    			<li><a href="#">&raquo;</a></li>
+				</ul>
+				</div>	
+			</li>
+			
 			<li>
 				<div id="step1">
-					<form action="" method="post" name="myform" id="myform">				
-					1.以下选项中不是草编的品种的是( )？<br>
+					<form action="" method="post" name="myform" id="myform">
+						<span style="font-size: 18px; margin-top: -100px;">1.( )又称麦油脂，并常被温岭人在端午节时食用</span><br>
                  	<input type="radio" name="work1" value="A" id="test1"><span class="span2">
-                    <label for="test1"> A.鞋</label></span><br>
+                    <label for="test1"> A.粽子</label></span><br>
              		<input type="radio" name="work1" value="B" id="test2"><span class="span2">
-                    <label for="test2">B.扇</label></span><br>
+                    <label for="test2">B.嵌糕</label></span><br>
                   	<input type="radio" name="work1" value="C" id="test3"><span class="span2">
-                    <label for="test3">C.碗</label></span><br>
+                    <label for="test3">C.食饼筒</label></span><br>
                    	<input type="radio" name="work1" value="D" id="test4"><span class="span2">
-                    <label for="test4">D.帽</label></span><br>
-                    <input type="button" id="testA1" value="提交" class="btn" onClick="getcheck('step1')">
-                    <input type="button" id="next1" value="下一题" onclick="getnext('step2')" class="btn" ><br>
+                    <label for="test4">D.鸡蛋麻糍</label></span><br>
+                    <input type="button" id="testA1" value="提交" onClick="getcheck('step1')" class="btn">
+                    <input type="button" id="next1" value="下一题" onclick="getnext('step2')" class="btn" > <br>
 					</form>
                     <p id="T">恭喜你，答对了！</p>                         
-						<p id="F">很遗憾，答错了！</p>                         
+                    <p id="F">很遗憾，答错了！</p>        
 				</div>
 				<div id="step2">
-					<form action="" method="post" name="myform1" id="myform1">
-					2.大奏鼓的舞蹈动作有什么特点( )？<br>
+					<form action="" method="post" name="myform1" id="myform1">				
+					2.绿豆面是温岭石塘箬山的一道特色美食，它是由什么制作而成的呢( )？<br>
                  	<input type="radio" name="work1" value="A" id="test5"><span class="span2">
-                    <label for="test5"> A.轻柔</label></span><br>
+                    <label for="test5"> A.绿豆</label></span><br>
              		<input type="radio" name="work1" value="B" id="test6"><span class="span2">
-                    <label for="test6">B.粗犷而滑稽</label></span><br>
+                    <label for="test6">B.番薯粉</label></span><br>
                   	<input type="radio" name="work1" value="C" id="test7"><span class="span2">
-                    <label for="test7">C.急促</label></span><br>
+                    <label for="test7">C.面粉</label></span><br>
                    	<input type="radio" name="work1" value="D" id="test8"><span class="span2">
-                    <label for="test8">D.优雅</label></span><br>
+                    <label for="test8">D.玉米粉</label></span><br>
                     <input type="button" id="testA2" value="提交" class="btn" onClick="getcheck('step2')">
                     <input type="button" id="previous" value="上一题" onclick="getprev('step1')" class="btn" ><br>
 					</form>
                     <p id="T1">恭喜你，答对了！</p>                         
                     <p id="F1">很遗憾，答错了！</p>                                  
-				</div>				
+				</div>							
 			</li>
 		</ul>	
 	</div>
@@ -332,6 +425,21 @@
 			tabContentActive = tabContent[index];
 		}
 	})
+</script>
+<script src="js/swiper.min.js"></script>
+ <script>
+	(function(){
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+	  centeredSlides: true,
+	  loop: true,
+      navigation:{
+		  nextEl:".swiper-button-next",
+		  prevEl:".swiper-button-prev",
+       },
+      });
+	})();
 </script>
 <script>
 function getcheck(i){
@@ -379,7 +487,7 @@ function getcheck(i){
 		
 	}
 
-}		
+}	
 function getnext(i){
 	alert(i);
   var sz=new Array("step1","step2");

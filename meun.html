@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Meun</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+	}
+	.main{
+		width:1007px;
+		height:600px;
+		margin:0 auto;
+		overflow: hidden;
+		position: relative;
+		background: #f9f9f9;
+	}
+	.box{
+		position: absolute;
+		top:50px;
+		width:1007px;
+		height:550px;
+
+		overflow: hidden;		
+	}
+	h2{
+		text-align: center;
+	}
+	li{
+		width: 330px;	
+		float:left;
+		border-left: 1px solid #fff;
+		position:relative;
+		transition:all 1s;
+	}
+	.flag{
+		position:absolute;
+		left: 0;
+		top:250px;
+		width:100%;
+		height:60px;
+		line-height: 60px;
+		text-align: center;
+		color:#fff;
+		background: rgba(0,0,0,.5)
+	}
+	.box:hover li{
+		width:173px;
+	}
+	.box li:hover{
+		width:640px;
+	}
+
+	img{
+		height: 550px;
+		width: 100%;
+		background: no-repeat;
+	}
+</style>
+</head>
+
+<body>
+<div class="main">
+<h2>目录</h2>
+<ul class="box">
+	<li class="active">
+		<a href="custom.html">
+		<img alt="" src="img/custombg.png">
+		<div class="flag">风俗人情</div></a>
+	</li>
+	<li>
+		<a href="food.html"><img alt="" src="img/foodbg.png">
+		<div class="flag">特色美食</div></a>
+	</li>
+	<li>
+		<a href="beauty.html"><img alt="" src="img/beauty.png">
+		<div class="flag">优美景区</div></a>
+	</li>
+</ul>
+</div>
+</body>
+</html>

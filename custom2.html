@@ -247,9 +247,9 @@
 	</div>
 	<div class="tab">
 		<ul class="tab_list">
-			<li class="atab_list">地区概述</li>
+			<li>地区概述</li>
 			<li>视频介绍</li>
-			<li>图文展示</li>
+			<li class="atab_list">图文展示</li>
 			<li>小测试</li>
 		</ul>
 		
@@ -262,17 +262,18 @@
 			</p>
 </li>
 			<li><iframe height=364 width=700 src='https://player.youku.com/embed/XMTcyNjMzNTY4NA==' frameborder=0 'allowfullscreen'></iframe></li>
-			<li>
+			<li class="atab_list">
 
-		<img alt="" src="img/minsu1.png">
+		<img alt="" src="img/custon2.png">
 		<div>
-			<h2>大奏鼓</h2>
-			<p>大奏鼓是流传在石塘镇箬山一带渔区的民间舞蹈。大奏鼓舞蹈动作粗犷而滑稽，边奏边舞，舞者全为男性，服饰打扮却是女性，在汉族舞蹈中不多见，具有独特的地方色彩。据福建《惠安县志》和《琅轩陈氏宗谱》载，箬山陈姓为十七世纪中叶由惠安迁入，大奏鼓（当时叫“大典鼓”）亦随之带入，距今有360余年历史。由于长期来石塘为半岛偏僻之地，大奏鼓才得以流传下来。</p>
+			<h2>石桥头米塑</h2>
+			<p>石桥头米塑是指分布在石桥头镇，用米糕捏制各种动物（俗称糕人糕马）的手工技艺。石桥头米塑的具体作品有：麒麟、狮子、独角兽、白象、老虎、狮子吼、犀牛、獭豺和十二生肖中全部动物造型。石桥头米塑历史悠久，在当地民俗活动中，米塑糕人糕马有祈求吉祥之寓意。同时又是供人观赏的手工艺品。按传统习俗，石桥头镇每年元宵都要举行三夜的迎灯活动，迎灯期间，每个自然村都要有祭品摆设，其中米塑糕人糕马是必不可少的祭品。
+			</p>
 		<ul class="pagination">
     		<li><a href="#">&laquo;</a></li>
-    		<li class="active"><a href="#">1</a></li>
+    		<li><a href="custom.html">1</a></li>
     		<li class="disabled"><a href="custom1.html">2</a></li>
-    		<li><a href="custom2.html">3</a></li>
+    		<li class="active"><a href="#">3</a></li>
     		<li><a href="custom3.html">4</a></li>
     		<li><a href="#">&raquo;</a></li>
 		</ul>
@@ -294,10 +295,10 @@
                     <input type="button" id="next1" value="下一题" onclick="getnext('step2')" class="btn" ><br>
 					</form>
                     <p id="T">恭喜你，答对了！</p>                         
-						<p id="F">很遗憾，答错了！</p>                         
+                    <p id="F">很遗憾，答错了！</p>                                  
 				</div>
 				<div id="step2">
-					<form action="" method="post" name="myform1" id="myform1">
+					<form action="" method="post" name="myform1" id="myform1">				
 					2.大奏鼓的舞蹈动作有什么特点( )？<br>
                  	<input type="radio" name="work1" value="A" id="test5"><span class="span2">
                     <label for="test5"> A.轻柔</label></span><br>
@@ -311,7 +312,7 @@
                     <input type="button" id="previous" value="上一题" onclick="getprev('step1')" class="btn" ><br>
 					</form>
                     <p id="T1">恭喜你，答对了！</p>                         
-                    <p id="F1">很遗憾，答错了！</p>                                  
+                    <p id="F1">很遗憾，答错了！</p>                                 
 				</div>				
 			</li>
 		</ul>	
@@ -334,7 +335,7 @@
 	})
 </script>
 <script>
-function getcheck(i){
+	function getcheck(i){
 	var sz = new Array("step1","step2");
 
 	if(i==sz[0]){

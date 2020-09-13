@@ -247,14 +247,14 @@
 	</div>
 	<div class="tab">
 		<ul class="tab_list">
-			<li class="atab_list">地区概述</li>
+			<li>地区概述</li>
 			<li>视频介绍</li>
-			<li>图文展示</li>
+			<li class="atab_list">图文展示</li>
 			<li>小测试</li>
 		</ul>
 		
 		<ul class="tab_content">
-			<li class="atab_content">
+			<li>
 			<iframe width='420' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://surl.amap.com/z9Vija1zdtC'></iframe>
 			<p>
 			
@@ -262,18 +262,19 @@
 			</p>
 </li>
 			<li><iframe height=364 width=700 src='https://player.youku.com/embed/XMTcyNjMzNTY4NA==' frameborder=0 'allowfullscreen'></iframe></li>
-			<li>
+			<li class="atab_content">
 
-		<img alt="" src="img/minsu1.png">
+		<img alt="" src="img/custom3.png">
 		<div>
-			<h2>大奏鼓</h2>
-			<p>大奏鼓是流传在石塘镇箬山一带渔区的民间舞蹈。大奏鼓舞蹈动作粗犷而滑稽，边奏边舞，舞者全为男性，服饰打扮却是女性，在汉族舞蹈中不多见，具有独特的地方色彩。据福建《惠安县志》和《琅轩陈氏宗谱》载，箬山陈姓为十七世纪中叶由惠安迁入，大奏鼓（当时叫“大典鼓”）亦随之带入，距今有360余年历史。由于长期来石塘为半岛偏僻之地，大奏鼓才得以流传下来。</p>
+			<h2>温岭工艺草编帽</h2>
+			<p>温岭工艺草编帽是利用天然的植物纤维为材料，经拧、缠、勾、编、钉、缝等几十道工序手工制作而成，具有传统的民族和地方特色。温岭的草编工艺始于清代中后期，十九世纪四十年代，温岭的草编帽就已远销国外。目前，省内具代表性的草编工艺帽生产基地是浙江舜浦工艺美术品有限公司，草编产品有帽、包、垫、片等近千个品种。
+			</p>
 		<ul class="pagination">
     		<li><a href="#">&laquo;</a></li>
-    		<li class="active"><a href="#">1</a></li>
+    		<li><a href="custom.html">1</a></li>
     		<li class="disabled"><a href="custom1.html">2</a></li>
     		<li><a href="custom2.html">3</a></li>
-    		<li><a href="custom3.html">4</a></li>
+    		<li class="active"><a href="#">4</a></li>
     		<li><a href="#">&raquo;</a></li>
 		</ul>
 		</div>	
@@ -294,10 +295,10 @@
                     <input type="button" id="next1" value="下一题" onclick="getnext('step2')" class="btn" ><br>
 					</form>
                     <p id="T">恭喜你，答对了！</p>                         
-						<p id="F">很遗憾，答错了！</p>                         
+                    <p id="F">很遗憾，答错了！</p>                                 
 				</div>
 				<div id="step2">
-					<form action="" method="post" name="myform1" id="myform1">
+					<form action="" method="post" name="myform1" id="myform1">				
 					2.大奏鼓的舞蹈动作有什么特点( )？<br>
                  	<input type="radio" name="work1" value="A" id="test5"><span class="span2">
                     <label for="test5"> A.轻柔</label></span><br>
@@ -311,7 +312,7 @@
                     <input type="button" id="previous" value="上一题" onclick="getprev('step1')" class="btn" ><br>
 					</form>
                     <p id="T1">恭喜你，答对了！</p>                         
-                    <p id="F1">很遗憾，答错了！</p>                                  
+                    <p id="F1">很遗憾，答错了！</p>                                 
 				</div>				
 			</li>
 		</ul>	
@@ -334,52 +335,6 @@
 	})
 </script>
 <script>
-function getcheck(i){
-	var sz = new Array("step1","step2");
-
-	if(i==sz[0]){
-		var choice = document.myform.work1.value;
-			console.log(":"+choice);
-		if(choice=="A"){
-			document.getElementById("T").style.display="none";
-			document.getElementById("F").style.display="block";
-		}
-		else if(choice=="B"){
-			document.getElementById("T").style.display="none";
-			document.getElementById("F").style.display="block";
-		}
-		else if(choice=="C"){
-			document.getElementById("T").style.display="block";
-			document.getElementById("F").style.display="none";
-		}
-		else if(choice=="D"){
-			document.getElementById("T").style.display="none";
-			document.getElementById("F").style.display="block";
-		}		
-	}
-	else if(i==sz[1]){
-		var choice = document.myform1.work1.value;
-			console.log(":"+choice);
-		if(choice=="A"){
-			document.getElementById("T1").style.display="none";
-			document.getElementById("F1").style.display="block";
-		}
-		else if(choice=="C"){
-			document.getElementById("T1").style.display="none";
-			document.getElementById("F1").style.display="block";
-		}
-		else if(choice=="B"){
-			document.getElementById("T1").style.display="block";
-			document.getElementById("F1").style.display="none";
-		}
-		else if(choice=="D"){
-			document.getElementById("T1").style.display="none";
-			document.getElementById("F1").style.display="block";
-		}		
-		
-	}
-
-}		
 function getnext(i){
 	alert(i);
   var sz=new Array("step1","step2");

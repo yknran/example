@@ -1,0 +1,480 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>beauty</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+<style>
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+	  flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+	  transition: 300ms;
+	  transform: scale(0.8);
+	  opacity: .4;
+    }
+	.swiper-slide p {
+    margin-top: -70px;
+    color: white;
+	}
+	.swiper-slide-active,.swiper-slide-duplicate-active{
+      transform: scale(1);
+	}
+	.swiper-slide-active,
+	.swiper-slide-duplicate-active{
+		transform:scale(1.2);
+		z-index: 999;
+		opacity: 1;
+	}
+	.size{
+		width:550px;
+		height:300px;
+	}
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.container{
+		position:relative;
+		height:600px;
+		width: 1007px;
+		margin:0 auto;
+		background:url(img/bg.png) no-repeat;
+		border:1px dashed aqua;
+	}
+	a{
+		text-decoration: none;
+	}
+	.home{
+		position:absolute;
+		left:50px;
+		top:50px;
+	}
+	.home ul{
+		list-style: none;
+	}
+	.home ul li a{ display:flex;
+	 width:100px;  line-height: 30px;color:#000;text-decoration:none;  }	
+	
+	.home ul>li{position:relative;}
+
+
+	.tab{
+		position: absolute;
+		width:700px;
+		height:550px;
+		top:100px;
+		left:260px;
+		background:white;
+		background: rgba(249,249,249,.4);
+	}
+	.tab ul{
+		list-style-type:none;
+	}
+	.tab .tab_list{
+		display: flex;
+	}
+	.tab .tab_list li{
+		padding:10px 20px;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		background: #e5e9ea;
+		margin-right: 2px;
+		color:#607291;
+	}
+	.tab .tab_list .atab_list{
+		background: #f9f9f9;
+	}
+	.tab .tab_content{
+		position:relative;
+		height:300px;
+		background:#f9f9f9;
+		padding:2em;
+		background: rgba(249,249,249,.4);
+
+	}
+	.tab .tab_content>li{
+		width:100%;
+		height:100%;
+		position: absolute;
+		top:0;
+		left:0;
+		display: flex;
+		align-items: center;
+		padding: 15px;
+		box-sizing: border-box;
+		display: none;
+	}
+	.tab .tab_content .atab_content{
+		display: flex;
+	}
+	.tab .tab_content li .showImg {
+    	width: 200px;
+    	height: 150px;
+    	margin-top: -100px;
+	}
+	.tab .tab_content li .show {
+   		width: 100%;
+    	height: 128px;
+    	position: relative;
+   		margin-left: 20px;
+    	margin-top: -200px;
+	}
+	.tab .tab_content li p{
+		padding: 2em;
+	}
+
+	.tab .tab_content li p{
+		text-indent: 2em;
+	
+		line-height: 1.5em;
+		overflow:hidden;
+	}
+	.pagination{
+		display: flex;
+	}
+	.pagination li a{ display:block;
+	 width:45px;border:1px solid white; text-align: center; line-height: 30px;border-width: 1px 1px 0 0;color:#000;text-decoration:none;  }	
+	#step1{
+		display: block;
+	}
+	#step2{
+		display: none;
+	}
+	.box{
+		position: relative;
+		width:100%;
+		height:100%;
+		transform-style: preserve-3d;
+		transition: all .4s;
+	}
+	.home ul li ul{display: none;}
+	.home ul li:hover ul li{
+		width:100px;
+		height: 30.6px;
+		list-style: none;
+		perspective: 500px;
+	}
+	.home ul li:hover{
+		width:550px;
+		height:200px;
+	}
+	.box:hover{
+		transform: rotateX(90deg);
+	}
+	.home ul li:hover ul {display:block;
+	}
+	.home ul li:hover ul li:nth-child(1){
+		position:absolute;
+		top:50px;
+		left:0;		
+	}
+	.home ul li:hover ul li:nth-child(2){
+		position:absolute;
+		top:20px;
+		left:100px;		
+	}
+	.home ul li:hover ul li:nth-child(3){
+		position:absolute;
+		top:-20px;
+		left:100px;		
+	}
+	.front,.bottom{
+		position:absolute;
+		left:0;
+		top: 0;
+		width:100%;
+		height: 100%;
+	}
+
+	.front{
+		z-index: 1;
+		transform: translateZ(17.5px);
+	}
+	.bottom{
+		transform: translateY(17.5px) rotateX(-90deg);
+	}
+	.home ul{
+		display: flex;
+	}
+	.home ul li a img{
+		width:20px;
+		margin-right: 5px;
+		opacity: .6;
+		transition: opcity 0.3s;
+	}
+	.home ul li a h2{
+		font-size: 14px;
+	}
+	.home ul li a:hover img{
+		opacity: 1;
+	}
+		#main{
+			width: 300px;
+			height: 300px;
+
+		}
+	#begin{
+			width: 300px;
+			height: 300px;
+			float: left;
+			margin: 5px;
+			padding: 0px;
+			list-style-type: none;
+			background-color: blanchedalmond;
+		}
+	#begin li {
+			float: left;
+		}
+		#success {
+			display: none;
+			line-height: 14px;
+			text-align: center;
+			color:white;
+			font-size: 14px;
+			margin-top:-100px;
+			z-index: 999;
+		}
+</style>
+</head>
+
+<body>
+<div class="container">
+	<div class="home">
+		<ul>
+		<li>
+			<a href="#"><img alt="" src="img/导航.png" width="30px"
+			height="30px"><h2>导航</h2></a>	
+			<ul>
+			<li>
+			<div class="box">
+			<div class="front">
+			<img alt="" src="img/导航 (1).png" width="30px"
+			height="30px"></div>
+			<div class="bottom">
+				<a href="custom.html"><img alt="" src="img/导航 (1).png" width="30px"
+			height="30px"><h2>风俗人情</h2></a>
+			</div>	
+			</div>
+			</li>
+			<li>
+			<div class="box">
+			<div class="front">
+			<img alt="" src="img/导航 (1).png" width="30px"
+			height="30px"></div>
+			<div class="bottom">
+				<a href="food.html"><img alt="" src="img/导航 (1).png" width="30px"
+				 height="30px"><h2>特色美食</h2></a>	
+			</div>	
+			</div>
+			</li>
+			<li>
+			<div class="box">
+			<div class="front"><img alt="" src="img/导航 (1).png" width="30px"
+			height="30px"></div>
+			<div class="bottom">
+				<a href="beauty.html"><img alt="" src="img/导航 (1).png" width="30px"
+				 height="30px"><h2>优美景区</h2></a>
+			</div>	
+			</div>
+			</li>						
+			</ul>
+			
+		</li>	
+		</ul>
+	</div>
+	<div class="tab">
+		<ul class="tab_list">
+			<li>地区概述</li>
+			<li>风景展示</li>
+			<li class="atab_list">图文展示</li>
+			<li>小游戏</li>
+		</ul>
+		
+		<ul class="tab_content">
+			<li>
+			<iframe width='420' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://surl.amap.com/z9Vija1zdtC'></iframe>
+			<p>
+			
+				温岭市是浙江省台州市所辖县级市，中国大陆新千年、新世纪第一缕曙光首照地，地处浙江东南沿海，长三角地区的南翼，三面临海 ，东濒东海，南连玉环，西邻乐清及乐清湾，北接台州市区，地理坐标东经121°09′50″~121°44′0″，北纬28°12′45″~28°32′02″，是一座滨海城市。
+			</p>
+			</li>
+			<li>  
+			<div class="swiper-container">
+	    	<div class="swiper-wrapper">
+      		<div class="swiper-slide size">
+      		<a href="#"><img alt="" src="img/qingqu.png" width="400px" height="300px"></a>
+      		<p>长屿硐天</p>
+     	 	</div>
+     		<div class="swiper-slide">
+      		<a href="#"><img alt="" src="img/qingqu1.png" width="400px" height="300px"></a>
+      		<p>温岭古井</p>     		
+     		</div>
+      		<div class="swiper-slide">
+       		<a href="#"><img alt="" src="img/qingqu2.png" width="400px" height="300px"></a>
+      		<p>新河闸桥群</p>     			
+      		</div>
+     	 	<div class="swiper-slide">
+        	<a href="#"><img alt="" src="img/jingqu3.png" width="400px" height="300px"></a>
+      		<p>江厦潮汐实验电站</p>     	 		
+     	 	</div>
+      		<div class="swiper-slide">
+       		<a href="#"><img alt="" src="img/jingqu4.png" width="400px" height="300px"></a>
+      		<p>方山-南嵩岩</p>       		     			
+      		</div>
+    		</div>
+    		<div class="swiper-button-next"></div>
+    		<div class="swiper-button-prev"></div>
+  			</div>
+			</li>
+			<li  class="atab_content">
+				<img alt="" src="img/qingqu1.png" class="showImg">
+				<div class="show">
+				<h2>温岭古井</h2>
+				<p>中山村鸢泉位于浙江省温岭市石塘镇中山村澄海西路23号门前。建于民国二十五年六月（1936）。井身圆形，块石砌筑，白石六角形井圈，用六块开出榫头的大石板扦合而成，每边长65厘米，厚14厘米，高60厘米。西面井圈外侧上写有“鸢泉”二字，其相邻井圈上刻有“民国二十五年六月立”。水井规矩厚重，泉水清澈甘甜，是居民生活水源。井身圆形，块石砌筑，白石六角形井圈，用六块开出榫头的大石板插合而成。每边长55厘米，高72厘米，面积为0.8平方米。
+				</p>
+				<ul class="pagination">
+    			<li><a href="#">&laquo;</a></li>
+    			<li class="disabled"><a href="beauty.html">1</a></li>
+    			<li class="active"><a href="#">2</a></li>
+    			<li><a href="beauty2.html">3</a></li>
+    			<li><a href="beauty3.html">4</a></li>
+    			<li><a href="#">&raquo;</a></li>
+				</ul>
+				</div>	
+			</li>
+			<li>
+			<div id="main">
+		<ul id="begin">
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/2.png" alt="" width="100px" height="100px" draggable="true" id="drag1" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/5.png" alt="" width="100px" height="100px" draggable="true" id="drag2" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/9.png" alt="" width="100px" height="100px" draggable="true" id="drag3" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/1.png" alt="" width="100px" height="100px" draggable="true" id="drag4" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/6.png" alt="" width="100px" height="100px" draggable="true" id="drag5" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/3.png" alt="" width="100px" height="100px" draggable="true" id="drag6" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/8.png" alt="" width="100px" height="100px" draggable="true" id="drag7" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/4.png" alt="" width="100px" height="100px" draggable="true" id="drag8" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+			<li ondrop="drop(event)" ondragover="dropOver(event)">
+				<img src="img/7.png" alt="" width="100px" height="100px" draggable="true" id="drag9" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+			</li>
+		</ul>
+	</div>
+	<p id="success">恭喜您 拼图成功！</p>							
+			</li>
+		</ul>	
+	</div>
+</div>
+<script>
+	let tabList = document.querySelectorAll(".tab_list>li");
+	let tabContent = document.querySelectorAll(".tab_content>li");
+	let tabListActive = document.querySelector(".atab_list");
+	let tabContentActive = document.querySelector(".atab_content");
+	tabList.forEach(function(item,index){
+		item.onclick = function(){
+			tabListActive.className = "";
+			this.className = "atab_list";
+			tabListActive = this;
+			tabContentActive.className = "";
+			tabContent[index].className = "atab_content";
+			tabContentActive = tabContent[index];
+		}
+	})
+</script>
+<script src="js/swiper.min.js"></script>
+ <script>
+	(function(){
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+	  centeredSlides: true,
+	  loop: true,
+      navigation:{
+		  nextEl:".swiper-button-next",
+		  prevEl:".swiper-button-prev",
+       },
+      });
+	})();
+</script>
+
+	<script>
+		var start_index;
+		var end_index;
+		function dragStart(event) {
+			console.log("dragStart: " + event.target.id);
+			start_index = event.target.id;
+		}
+		function dragEnd(event) {
+			event.preventDefault();
+		}
+		function dropOver(event) {
+			event.preventDefault();
+		}
+		function drop(event) {
+			event.preventDefault();
+			console.log("drop: "+event.target.id);
+			end_index = event.target.id;
+			exchange(start_index, end_index, "src");
+			check();
+		}
+		// 交换id1和id2两个元素的attri属性值
+		function exchange(id1, id2, attri){
+			ele1 = document.getElementById(id1);
+			ele2 = document.getElementById(id2);
+			var tmp_attri = ele1.getAttribute(attri);
+			ele1.setAttribute(attri, ele2.getAttribute(attri));
+			ele2.setAttribute(attri, tmp_attri);			
+		}
+		function check(){
+			var img_list =
+			document.getElementById("begin").getElementsByTagName("img");
+			var img_list1 =
+			document.getElementsByTagName("img");			
+			for(var i=0; i<9; i++){
+				console.log(": "+img_list[i]);
+				console.log(":1 "+img_list1[i]);
+			}
+			var img_src,dot_index,img_index;
+			for(var i=0; i<9; i++){
+				img_src = img_list[i].getAttribute("src");
+				dot_index = img_src.lastIndexOf(".");
+				img_index = Number(img_src.slice(dot_index - 1, dot_index));
+				if (img_index != i+1)	return false;
+			}
+			var success = document.getElementById("success");
+			success.style.display = "block";
+		}
+	</script>
+</body>
+</html>
